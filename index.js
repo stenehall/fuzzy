@@ -8,14 +8,12 @@ const fuzzyTime = minute => {
   switch (true) {
     case m < 9:
       return 'strax'
-    case m < 19:
-      return 'mindre än 20'
+    case m < 15:
+      return 'inom en kvart'
     case m < 29:
-      return 'mindre än 30'
-    case m < 39:
-      return 'mindre än 40'
-    case m < 49:
-      return 'mindre än 50'
+      return 'under halvtimmen'
+    case m < 45:
+      return 'inom 45'
     default:
       return 'mindre än en timme'
   }
