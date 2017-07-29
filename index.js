@@ -29,3 +29,11 @@ const createMinute = minute => {
 }
 
 minutes.forEach(createMinute)
+
+fs.writeFileSync('README.md', '# fuzzy time\nA static fuzzy hour\n\n')
+minutes.forEach(minute => {
+  fs.appendFileSync(
+    'README.md',
+    `  - [${minute} - ${fuzzyTime(minute)}](/fuzzy/time/${minute})\n`
+  )
+})
